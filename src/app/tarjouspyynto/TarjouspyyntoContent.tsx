@@ -29,6 +29,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { PHONE_HREF, PHONE_NUMBER } from "@/lib/utils";
+import { IMAGES } from "@/data/images";
 
 const customerTypes = [
   { id: "omakoti", label: "Omakotitalo / loma-asunto", icon: Home },
@@ -143,7 +144,7 @@ function QuoteFlow() {
         label="Tarjouspyyntö"
         title="Tehdään tästä helppoa"
         subtitle="Vastaa neljään lyhyeen kysymykseen, niin räätälöimme sinulle sopivan tarjouksen. Vastaamme 24 tunnin sisällä – maksutta ja sitoutumatta."
-        image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80"
+        image={IMAGES.sivuTarjouspyyntoHero}
       />
 
       <section className="section-padding">

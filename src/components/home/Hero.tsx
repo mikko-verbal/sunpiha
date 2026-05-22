@@ -7,6 +7,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, Phone, Star, ShieldCheck, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PHONE_HREF, PHONE_NUMBER } from "@/lib/utils";
+import { IMAGES } from "@/data/images";
+import { usePrefersNativeScroll } from "@/hooks/use-native-scroll";
 import { HeroParticles } from "./HeroParticles";
 
 const heroChips = [
@@ -25,6 +27,7 @@ const heroStats = [
 ];
 
 export function Hero() {
+  const prefersNative = usePrefersNativeScroll();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -42,7 +45,7 @@ export function Hero() {
       {/* Kiinteä tausta – ei scroll-linkitettyä transformia */}
       <div className="absolute inset-0 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+          src={IMAGES.etusivuHero}
           alt="Kaunis suomalainen piha auringonvalossa"
           fill
           priority
@@ -58,11 +61,11 @@ export function Hero() {
         <div className="absolute -right-32 bottom-1/4 h-[500px] w-[500px] rounded-full bg-forest/30 blur-[140px]" />
       </div>
 
-      <HeroParticles />
+      {!prefersNative && <HeroParticles />}
 
       <motion.div
         className="noise-overlay relative z-10 container-wide"
-        style={{ opacity: contentOpacity }}
+        style={prefersNative ? undefined : { opacity: contentOpacity }}
       >
         <div className="mx-auto max-w-5xl text-center">
           {/* Eyebrow */}

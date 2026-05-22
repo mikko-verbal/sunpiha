@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { CheckCircle, Wrench, Heart, Shield, Award } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal, SectionHeading } from "@/components/ui/motion";
+import { IMAGES } from "@/data/images";
 
 const values = [
   {
@@ -40,7 +41,7 @@ export default function YritysContent() {
         label="Yritys"
         title="Sun Piha Oy"
         subtitle="Kotimainen palveluyritys – olemme apunasi vuoden jokaisena päivänä, tarvittaessa vaikka kellon ympäri."
-        image="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80"
+        image={IMAGES.sivuYritysHero}
       />
 
       <section className="section-padding bg-charcoal">
@@ -96,7 +97,7 @@ export default function YritysContent() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
+                  src={IMAGES.sivuYritysTiimi}
                   alt="Sun Piha tiimi työssä"
                   fill
                   className="object-cover"

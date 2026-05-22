@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { IMAGES } from "@/data/images";
 
 export default function TilaaVaihtolavaContent() {
   const [submitted, setSubmitted] = useState(false);
@@ -30,7 +31,7 @@ export default function TilaaVaihtolavaContent() {
         label="Vaihtolava"
         title="Tilaa vaihtolava helposti"
         subtitle="Tarvitsetko vaihtolavan talkoisiin, remonttiin tai rakennustyömaalle? Toimitus usein jo seuraavaksi arkipäiväksi."
-        image="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80"
+        image={IMAGES.sivuVaihtolavaHero}
       />
 
       <section className="section-padding bg-charcoal">

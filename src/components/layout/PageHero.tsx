@@ -4,6 +4,8 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { fadeUpVariants, staggerContainer } from "@/components/ui/motion";
+import { IMAGES } from "@/data/images";
+import { usePrefersNativeScroll } from "@/hooks/use-native-scroll";
 
 interface PageHeroProps {
   title: string;
@@ -15,9 +17,10 @@ interface PageHeroProps {
 export function PageHero({
   title,
   subtitle,
-  image = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+  image = IMAGES.sivuOletusHero,
   label,
 }: PageHeroProps) {
+  const prefersNative = usePrefersNativeScroll();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -32,7 +35,10 @@ export function PageHero({
       ref={ref}
       className="relative flex min-h-[55vh] items-end overflow-hidden pt-24 md:min-h-[62vh]"
     >
-      <motion.div className="absolute inset-0" style={{ y: bgY, scale: bgScale }}>
+      <motion.div
+        className="absolute inset-0"
+        style={prefersNative ? undefined : { y: bgY, scale: bgScale }}
+      >
         <Image
           src={image}
           alt=""
@@ -53,7 +59,7 @@ export function PageHero({
 
       <motion.div
         className="container-wide relative z-10 pb-16 pt-24 md:pt-28"
-        style={{ opacity: fade }}
+        style={prefersNative ? undefined : { opacity: fade }}
       >
         <motion.div
           initial="hidden"

@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import { whyChooseUs } from "@/data/testimonials";
 import { PHONE_HREF, PHONE_NUMBER } from "@/lib/utils";
+import { usePrefersNativeScroll } from "@/hooks/use-native-scroll";
+import { IMAGES } from "@/data/images";
 import { Button } from "@/components/ui/button";
 import {
   fadeUpVariants,
@@ -36,6 +38,7 @@ const promises = [
 ];
 
 export function WhyChooseUs() {
+  const prefersNative = usePrefersNativeScroll();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -59,9 +62,12 @@ export function WhyChooseUs() {
           {/* Kuva ja päällekkäiset kortit */}
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/8 shadow-2xl shadow-black/40">
-              <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
+              <motion.div
+                style={prefersNative ? undefined : { y: imageY }}
+                className={prefersNative ? "absolute inset-0" : "absolute inset-0 scale-110"}
+              >
                 <Image
-                  src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1200&q=85"
+                  src={IMAGES.etusivuMiksiMe}
                   alt="Ammattitaitoinen piha- ja kiinteistönhuolto"
                   fill
                   className="object-cover"
@@ -73,7 +79,7 @@ export function WhyChooseUs() {
 
             {/* 24/7 -badge */}
             <motion.div
-              style={{ y: badgeY }}
+              style={prefersNative ? undefined : { y: badgeY }}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}

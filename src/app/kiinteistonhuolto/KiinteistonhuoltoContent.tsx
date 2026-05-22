@@ -10,6 +10,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Reveal, SectionHeading } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { PHONE_HREF, PHONE_NUMBER } from "@/lib/utils";
+import { IMAGES } from "@/data/images";
 
 export default function KiinteistonhuoltoContent() {
   return (
@@ -18,7 +19,7 @@ export default function KiinteistonhuoltoContent() {
         label="Kiinteistönhuolto"
         title="Monipuolista kiinteistönhuoltoa Uudellamaalla"
         subtitle="Monipuolisia kiinteistönhuoltopalveluita vuoden ympäri Helsingissä, Espoossa ja Vantaalla. Takaamme laadukkaan ja ammattitaitoisen palvelukokemuksen jokaiselle asiakkaallemme."
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        image={IMAGES.sivuKiinteistonhuoltoHero}
       />
 
       <section className="section-padding bg-charcoal">
@@ -107,7 +108,7 @@ export default function KiinteistonhuoltoContent() {
 
       <section className="relative py-24 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1920&q=80"
+          src={IMAGES.sivuKiinteistonhuoltoTalvi}
           alt="Päivystyspalvelu talvella"
           fill
           className="object-cover"

@@ -121,9 +121,24 @@ body {
   color: var(--color-cream);
   font-family: var(--font-body);
   overflow-x: hidden;
-  overscroll-behavior-y: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (pointer: fine) {
+  body {
+    overscroll-behavior-y: none;
+  }
+}
+
+@media (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 ::selection {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/ui/motion";
 import { COMPANY, SERVICE_EMAIL, PHONE_NUMBER, PHONE_HREF } from "@/lib/utils";
+import { IMAGES } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Tietosuojaseloste",
@@ -69,7 +70,7 @@ export default function TietosuojaselostePage() {
         label="Tietosuoja"
         title="Tietosuojaseloste"
         subtitle="Päivitetty viimeksi: 6.3.2023"
-        image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80"
+        image={IMAGES.sivuTietosuojaHero}
       />
 
       <section className="section-padding bg-charcoal">

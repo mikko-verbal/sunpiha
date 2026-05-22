@@ -1,0 +1,9 @@
+Sun Piha – kuvat
+================
+
+Jokaisessa alikansiossa on yksi kuva: kuva.jpg
+
+Vaihda kuva korvaamalla kuva.jpg samalla nimellä.
+Älä muuta kansion nimeä.
+
+Täydellinen ohje: katso projektin juuresta tiedosto SISALTO-OHJE.md

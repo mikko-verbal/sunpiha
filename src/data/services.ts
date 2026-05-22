@@ -1,3 +1,5 @@
+import { IMAGES } from "./images";
+
 export type ServiceIconName =
   | "hammer"
   | "leaf"
@@ -31,8 +33,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Kattava huoltopalvelu omakotitaloille, taloyhtiöille ja liikekiinteistöille – vuoden ympäri.",
     longDescription:
       "Tarjoamme monipuolisia kiinteistönhuoltopalveluita, jotka kattavat ulkoalueiden hoidon, vikailmoitukset, liputukset ja ylläpitopalvelut. Olemme luotettava kumppani kiinteistösi arjen sujuvuudelle.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+    image: IMAGES.palveluKiinteistonhuolto,
     icon: "hammer",
     items: [
       "Huoltopalvelut",
@@ -57,8 +58,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Leikkuu, kastelu, lannoitus ja paikkaukset – unelmapiha alkaa täydellisestä nurmikosta.",
     longDescription:
       "Ammattitaitoinen nurmikon hoito kaikkine osa-alueineen. Hoidamme nurmikon leikkuun, kastelun, lannoituksen ja paikkaukset – niin että pihasi on aina edustava.",
-    image:
-      "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1200&q=80",
+    image: IMAGES.palveluNurmikko,
     icon: "leaf",
     items: [
       "Leikkuu",
@@ -83,8 +83,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Lumenpudotus, auraus, hiekoitus ja poiskuljetus – päivystys 24/7 talvikaudella.",
     longDescription:
       "Luotettava talvikunnossapito koko talvikauden. Hoidamme lumenpudotukset, auraus-, hiekoitus- ja poiskuljetustyöt ammattitaidolla. Päivystys 24/7.",
-    image:
-      "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1200&q=80",
+    image: IMAGES.palveluTalvikunnossapito,
     icon: "snowflake",
     items: [
       "Lumenpudotus",
@@ -108,8 +107,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Julkisivut, huopakatot, teollisuus- ja korkeapainepesut ammattilaisen otteella.",
     longDescription:
       "Ammattitaitoiset pesupalvelut julkisivuista teollisuuskiinteistöihin. Graffitin poisto, korkeapainepesut ja parkkihallipesut – siisti julkisivu ja turvallinen ympäristö.",
-    image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80",
+    image: IMAGES.palveluPesupalvelut,
     icon: "droplets",
     items: [
       "Graffitin poistot",
@@ -133,8 +131,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Pihasuunnittelu, istutukset ja viherrakentaminen – luomme pihasi unelmien mukaiseksi.",
     longDescription:
       "Suunnittelemme ja rakennamme pihoja, joissa on hyvä olla. Viherrakentaminen, saneeraus, pienkorjaus ja maalaustyöt ammattilaisen otteella.",
-    image:
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80",
+    image: IMAGES.palveluViherrakentaminen,
     icon: "treePine",
     items: [
       "Uudisrakentaminen",
@@ -158,8 +155,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Halkeamien korjaus, reikien paikkaus ja routa- sekä juurivaurioiden korjaukset.",
     longDescription:
       "Asfaltin korjaus ja päällystetyöt pihoille, pysäköintialueille ja teille. Korjaamme halkeamat, reiät ja routa- sekä juurivauriot kestävästi.",
-    image:
-      "https://images.unsplash.com/photo-1772852331753-fc11e83a7288?w=1200&q=80",
+    image: IMAGES.palveluAsfaltti,
     icon: "truck",
     items: [
       "Halkeamat",
@@ -183,8 +179,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Lehtien puhallus, istutukset, talvisuojaukset ja alas-leikkaukset ammattitaidolla.",
     longDescription:
       "Hoidamme puiden, pensaiden ja lehtien käsittelyn ammattitaidolla. Syksyn lehtien puhallus, istutukset, talvisuojaukset ja leikkaukset.",
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+    image: IMAGES.palveluPuutarha,
     icon: "treePine",
     items: [
       "Lehtien puhallus ja haravointi",
@@ -208,8 +203,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Pihakivet, terassipesu, rännien puhdistus ja piha-aidat – pihasi loistaa kuin uusi.",
     longDescription:
       "Pihapesu ja ulkoalueiden siivous palauttaa pihasi entiseen loistoonsa. Pihakivet, terassit, rännit ja piha-aidat – kaikki hoidetaan ammattitaidolla.",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
+    image: IMAGES.palveluPihapesu,
     icon: "sparkles",
     items: [
       "Pihakivet ja laatoitukset",
@@ -232,8 +226,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Mullat, hiekat, kivituhkat ja koriste- sekä kuorikatteet – toimitus ja nouto.",
     longDescription:
       "Toimitamme laadukkaat maa-ainekset suoraan kohteeseen. Mullat, hieat, kivituhkat, kivimurskat, sepelit ja koriste- sekä kuorikatteet.",
-    image:
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80",
+    image: IMAGES.palveluSuursakit,
     icon: "package",
     items: [
       "Mullat",
@@ -262,7 +255,7 @@ export const services: Service[] = serviceDetails.map((s) => ({
   id: s.id,
   title: s.title,
   description: s.description,
-  image: s.image.replace("1200", "800"),
+  image: s.image,
   href: `/palvelut/${s.slug}`,
 }));
 
@@ -271,22 +264,19 @@ export const serviceCategories = [
     title: "Omakotitalot & loma-asunnot",
     description:
       "Henkilökohtainen palvelu ja joustavat ratkaisut omakotitalojen ja lomakiinteistöjen tarpeisiin.",
-    image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+    image: IMAGES.kohderyhmaOmakotitalot,
   },
   {
     title: "Taloyhtiöt & liikekiinteistöt",
     description:
       "Luotettava kumppani taloyhtiöiden ja liikekiinteistöjen ylläpitoon ja huoltoon.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    image: IMAGES.kohderyhmaTaloyhtiot,
   },
   {
     title: "Kaupungit & kunnat",
     description:
       "Laajamittainen kiinteistönhuolto ja ulkoalueiden hoito julkisille toimijoille.",
-    image:
-      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
+    image: IMAGES.kohderyhmaKaupungit,
   },
 ];
 

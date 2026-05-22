@@ -9,6 +9,7 @@ import { Reveal, SectionHeading, fadeInVariants } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { PHONE_HREF } from "@/lib/utils";
 import { getServiceIcon } from "@/lib/service-icons";
+import { IMAGES } from "@/data/images";
 
 export default function PalvelutContent() {
   return (
@@ -17,7 +18,7 @@ export default function PalvelutContent() {
         label="Palvelut"
         title="Palvelumme"
         subtitle="Monipuolisia kiinteistönhuoltopalveluita vuoden ympäri – ammattitaidolla ja luotettavasti."
-        image="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80"
+        image={IMAGES.sivuPalvelutHero}
       />
 
       <section className="section-padding bg-charcoal">

@@ -1,3 +1,5 @@
+import { IMAGES } from "./images";
+
 export interface NewsArticle {
   id: string;
   slug: string;
@@ -18,8 +20,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt:
       "Kiinteistöhuollossa asianmukainen jätteiden käsittely ja kierrätys ovat keskeisiä keinoja ympäristökuormituksen vähentämiseksi.",
     date: "15.1.2025",
-    image:
-      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80",
+    image: IMAGES.uutinenCirculation,
     category: "Ajankohtaista",
     content: [
       "Kiinteistöhuollossa asianmukainen jätteiden käsittely ja kierrätys ovat keskeisiä keinoja ympäristökuormituksen vähentämiseksi ja arvokkaiden luonnonvarojen säästämiseksi.",
@@ -35,8 +36,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt:
       "Hyödynnä kotitalousvähennys pihatyöpalveluissamme – autamme sinua selvittämään oikeuden vähennykseen.",
     date: "8.1.2025",
-    image:
-      "https://images.unsplash.com/photo-1554224311-beee415c201f?w=1200&q=80",
+    image: IMAGES.uutinenKotitalousvahennys,
     category: "Ajankohtaista",
     content: [
       "Vuonna 2025 kotitalousvähennykseen on tullut muutoksia, jotka vaikuttavat kodin remontti- ja huoltotöiden verovähennyksiin. Uudet säännökset koskevat myös kiinteistönhuolto- ja rakentamispalveluitamme.",
@@ -55,8 +55,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt:
       "Tarjoamme lumen poiskuljetuksen kiinteään hintaan koko talvikauden ajan – ei yllätyksiä laskussa.",
     date: "20.12.2024",
-    image:
-      "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1200&q=80",
+    image: IMAGES.uutinenLumenPoiskuljetus,
     category: "Ajankohtaista",
     content: [
       "Etsitkö nopeaa ja luotettavaa tapaa päästä eroon lumesta? Sun Piha Oy tarjoaa helpon ja edullisen ratkaisun lumenpoiskuljetukseen pääkaupunkiseudulla!",
@@ -76,8 +75,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt:
       "Etsimme ammattitaitoista koneenkuljettajaa vahvistamaan talvikunnossapidon tiimiämme.",
     date: "5.11.2024",
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80",
+    image: IMAGES.uutinenRekryKoneenkuljettaja,
     category: "Ajankohtaista",
     content: [
       "Haemme kokenutta koneenkuljettajaa talvikunnossapitoon pääkaupunkiseudun alueelle.",
@@ -98,8 +96,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt:
       "Tutustu avoimiin työpaikkoihin Sun Piha Oy:llä – rakennamme yhdessä alan parasta tiimiä.",
     date: "1.10.2024",
-    image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80",
+    image: IMAGES.uutinenAvoimetTyopaikat,
     category: "Ajankohtaista",
     content: [
       "Kiinnostaako työ kiinteistöhuollon parissa? Etsitkö pidempiaikaista työtä, vai sopisiko sinulle kausiluonteinen työ?",

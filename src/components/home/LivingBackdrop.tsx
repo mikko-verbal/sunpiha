@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { usePrefersNativeScroll } from "@/hooks/use-native-scroll";
 
 /**
  * Fixed taustakerros – kevyt scroll-reaktio ilman spring-lagia.
  * Raskaat blur-liikkeet poistettu, jotta Lenis-scroll pysyy sulavana.
  */
 export function LivingBackdrop() {
+  const prefersNative = usePrefersNativeScroll();
   const { scrollYProgress } = useScroll();
   const [mounted, setMounted] = useState(false);
 
@@ -39,13 +41,12 @@ export function LivingBackdrop() {
         }}
       />
 
-      {/* Aurora: CSS-animaatio, ei scroll-ajettu rotaatio */}
-      {mounted && (
+      {/* Aurora: vain desktop – rasittaa mobiiliscrollia */}
+      {mounted && !prefersNative && (
         <div className="absolute -inset-[20%] animate-aurora bg-conic-aurora opacity-45" />
       )}
 
-      {/* Yksi kevyt hehku scrollilla */}
-      {mounted && (
+      {mounted && !prefersNative && (
         <motion.div
           style={{ y: sunY, opacity: glowOpacity }}
           className="absolute left-1/2 top-1/3 h-[48vmax] w-[48vmax] -translate-x-1/2 -translate-y-1/2"
@@ -54,20 +55,38 @@ export function LivingBackdrop() {
         </motion.div>
       )}
 
+      {mounted && prefersNative && (
+        <div className="absolute left-1/2 top-1/3 h-[48vmax] w-[48vmax] -translate-x-1/2 -translate-y-1/2 opacity-50">
+          <div className="absolute inset-0 bg-radial-sun" />
+        </div>
+      )}
+
       <div className="absolute inset-0 bg-radial-forest opacity-40" />
 
       <div className="grid-overlay" />
       <div className="grain-overlay" />
 
-      <motion.div style={{ opacity: vignetteOpacity }} className="absolute inset-0">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 120% 80% at 50% 50%, transparent 35%, rgba(11, 16, 13, 0.9) 100%)",
-          }}
-        />
-      </motion.div>
+      {prefersNative ? (
+        <div className="absolute inset-0 opacity-45">
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 120% 80% at 50% 50%, transparent 35%, rgba(11, 16, 13, 0.9) 100%)",
+            }}
+          />
+        </div>
+      ) : (
+        <motion.div style={{ opacity: vignetteOpacity }} className="absolute inset-0">
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 120% 80% at 50% 50%, transparent 35%, rgba(11, 16, 13, 0.9) 100%)",
+            }}
+          />
+        </motion.div>
+      )}
     </div>
   );
 }

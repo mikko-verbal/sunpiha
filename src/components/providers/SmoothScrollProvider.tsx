@@ -9,6 +9,7 @@ import {
 } from "react";
 import Lenis from "lenis";
 import { cancelFrame, frame } from "framer-motion";
+import { getPrefersNativeScroll } from "@/hooks/use-native-scroll";
 
 const LenisContext = createContext<Lenis | null>(null);
 
@@ -16,23 +17,34 @@ export function useLenis() {
   return useContext(LenisContext);
 }
 
-/** True when Lenis scroll position is past the given pixel threshold. */
+/** True when scroll position is past the given pixel threshold. */
 export function useLenisScrollPast(threshold: number): boolean {
   const lenis = useLenis();
   const [past, setPast] = useState(false);
 
   useEffect(() => {
-    if (!lenis) return;
+    if (lenis) {
+      const onScroll = ({ scroll }: { scroll: number }) => {
+        setPast(scroll > threshold);
+      };
 
-    const onScroll = ({ scroll }: { scroll: number }) => {
-      setPast(scroll > threshold);
+      lenis.on("scroll", onScroll);
+      onScroll({ scroll: lenis.scroll });
+
+      return () => {
+        lenis.off("scroll", onScroll);
+      };
+    }
+
+    const onNativeScroll = () => {
+      setPast(window.scrollY > threshold);
     };
 
-    lenis.on("scroll", onScroll);
-    onScroll({ scroll: lenis.scroll });
+    onNativeScroll();
+    window.addEventListener("scroll", onNativeScroll, { passive: true });
 
     return () => {
-      lenis.off("scroll", onScroll);
+      window.removeEventListener("scroll", onNativeScroll);
     };
   }, [lenis, threshold]);
 
@@ -43,13 +55,14 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
   const [lenis, setLenis] = useState<Lenis | null>(null);
 
   useEffect(() => {
+    // Lenis + touch = double-smoothing and stutter. Desktop wheel only.
+    if (getPrefersNativeScroll()) return;
+
     const instance = new Lenis({
       autoRaf: false,
-      lerp: 0.09,
+      lerp: 0.1,
       smoothWheel: true,
       wheelMultiplier: 0.95,
-      touchMultiplier: 1.35,
-      syncTouch: true,
     });
 
     setLenis(instance);
@@ -58,7 +71,6 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
       instance.raf(timestamp);
     }
 
-    // Same RAF loop as Framer Motion – avoids two loops fighting each other
     frame.update(onFrame, true);
 
     return () => {

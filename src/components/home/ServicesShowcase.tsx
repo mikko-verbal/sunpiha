@@ -13,6 +13,8 @@ import {
   staggerContainer,
 } from "@/components/ui/motion";
 import { getServiceIcon } from "@/lib/service-icons";
+import { IMAGES } from "@/data/images";
+import { usePrefersNativeScroll } from "@/hooks/use-native-scroll";
 
 /** Päänostot, joissa kerrotaan käyttäjän ongelma ja Sun Pihan ratkaisu. */
 const heroServices = [
@@ -22,8 +24,7 @@ const heroServices = [
     promise: "Yksi sopimus, koko vuoden rauha",
     description:
       "Hoidamme kiinteistösi ulkoalueet, ylläpidon ja vikailmoitukset. Sinulla on aina yksi luotettava numero.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80",
+    image: IMAGES.etusivuPalveluKiinteisto,
     badge: "Sopimusasiakkaille kiinteät hinnat",
   },
   {
@@ -32,8 +33,7 @@ const heroServices = [
     promise: "Lunta ei tarvitse pelätä",
     description:
       "Päivystys 24/7, lumenpudotus, auraus, hiekoitus ja poiskuljetus – nopeasti ja siististi.",
-    image:
-      "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1400&q=80",
+    image: IMAGES.etusivuPalveluTalvi,
     badge: "Päivystys 24/7",
   },
   {
@@ -42,8 +42,7 @@ const heroServices = [
     promise: "Pihasta unelmapiha",
     description:
       "Pihasuunnittelu, kivetykset, viherrakentaminen ja terassit. Suunnitellaan, toteutetaan ja siivotaan.",
-    image:
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1400&q=80",
+    image: IMAGES.etusivuPalveluPiharemontit,
     badge: "Kotitalousvähennys saatavilla",
   },
 ];
@@ -55,6 +54,7 @@ function HeroServiceCard({
   service: (typeof heroServices)[number];
   index: number;
 }) {
+  const prefersNative = usePrefersNativeScroll();
   const ref = useRef<HTMLAnchorElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -69,7 +69,10 @@ function HeroServiceCard({
       className="group relative block overflow-hidden rounded-3xl border border-white/8 bg-charcoal-light/60"
     >
       <div className="relative aspect-[4/5] overflow-hidden lg:aspect-[3/4]">
-        <motion.div style={{ y: imgY }} className="absolute inset-0 scale-110">
+        <motion.div
+          style={prefersNative ? undefined : { y: imgY }}
+          className={prefersNative ? "absolute inset-0" : "absolute inset-0 scale-110"}
+        >
           <Image
             src={service.image}
             alt={service.title}

@@ -15,6 +15,8 @@ import { NewsCard } from "@/components/news/NewsCard";
 import { SectionHeading } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { PHONE_HREF, PHONE_NUMBER } from "@/lib/utils";
+import { IMAGES } from "@/data/images";
+import { usePrefersNativeScroll } from "@/hooks/use-native-scroll";
 
 export function NewsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -93,6 +95,7 @@ export function NewsSection() {
 }
 
 export function EmergencyBanner() {
+  const prefersNative = usePrefersNativeScroll();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -106,17 +109,33 @@ export function EmergencyBanner() {
       ref={ref}
       className="relative isolate overflow-hidden py-24 md:py-28"
     >
-      <motion.div style={{ x, scale }} className="absolute inset-0 will-change-transform">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1920&q=85)",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/40" />
-        <div className="absolute inset-0 bg-charcoal/55" />
-      </motion.div>
+      <div
+        className={`absolute inset-0 ${prefersNative ? "" : "will-change-transform"}`}
+      >
+        {prefersNative ? (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${IMAGES.etusivuHataTalvi})`,
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/40" />
+            <div className="absolute inset-0 bg-charcoal/55" />
+          </>
+        ) : (
+          <motion.div style={{ x, scale }} className="absolute inset-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${IMAGES.etusivuHataTalvi})`,
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/40" />
+            <div className="absolute inset-0 bg-charcoal/55" />
+          </motion.div>
+        )}
+      </div>
 
       <div className="container-wide relative">
         <div className="grid items-center gap-10 md:grid-cols-[1.2fr_1fr]">

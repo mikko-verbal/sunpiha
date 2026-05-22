@@ -13,6 +13,7 @@ import {
   SERVICE_EMAIL,
   COMPANY,
 } from "@/lib/utils";
+import { IMAGES } from "@/data/images";
 
 export default function YhteystiedotContent() {
   return (
@@ -21,7 +22,7 @@ export default function YhteystiedotContent() {
         label="Yhteystiedot"
         title="Ota yhteyttä"
         subtitle="Olemme apunasi vuoden jokaisena päivänä – tarvittaessa vaikka kellon ympäri."
-        image="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80"
+        image={IMAGES.sivuYhteystiedotHero}
       />
 
       <section className="section-padding bg-charcoal">

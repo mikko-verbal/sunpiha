@@ -4,6 +4,7 @@ import { newsArticles } from "@/data/news";
 import { NewsCard } from "@/components/news/NewsCard";
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/ui/motion";
+import { IMAGES } from "@/data/images";
 
 export default function AjankohtaistaContent() {
   const [featured, ...rest] = newsArticles;
@@ -14,7 +15,7 @@ export default function AjankohtaistaContent() {
         label="Ajankohtaista"
         title="Uutiset ja tiedotteet"
         subtitle="Pysy ajan tasalla Sun Piha Oy:n uusimmista uutisista, palveluista ja avoimista työpaikoista."
-        image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1920&q=80"
+        image={IMAGES.sivuAjankohtaistaHero}
       />
 
       <section className="section-padding bg-charcoal">
