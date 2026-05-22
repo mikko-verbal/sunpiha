@@ -11,11 +11,11 @@ import { HeroParticles } from "./HeroParticles";
 
 const heroChips = [
   "Kiinteistönhuolto",
-  "Lumityöt",
-  "Nurmikkohuolto",
-  "Piharemontit",
   "Julkisivupesut",
+  "Puunkaato & raivaukset",
+  "Talvikunnossapito",
   "Asfaltinkorjaus",
+  "Graffitinpoistot",
 ];
 
 const heroStats = [
@@ -88,9 +88,8 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="mt-6 font-display text-[clamp(2.5rem,6.5vw,5.5rem)] font-bold leading-[1.05] tracking-tight text-cream text-balance"
           >
-            Pihasi ja kiinteistösi <br className="hidden md:inline" />
-            <span className="gradient-text-warm">parhaissa käsissä</span>
-            <span className="text-cream"> – vuoden ympäri.</span>
+            Monipuolisia kiinteistönhuoltopalveluita{" "}
+            <span className="gradient-text-warm">vuoden ympäri</span>
           </motion.h1>
 
           {/* Sub */}
@@ -100,9 +99,8 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cream md:text-xl text-pretty [text-shadow:0_1px_2px_rgba(11,16,13,0.95),0_2px_12px_rgba(11,16,13,0.85),0_0_28px_rgba(11,16,13,0.7)]"
           >
-            Helsinki · Espoo · Vantaa. Yksi luotettava kumppani kaikkeen
-            kiinteistösi hoitoon – kiinteistönhuollosta lumitöihin,
-            pihasuunnitteluun ja julkisivupesuihin.
+            Helsingissä, Espoossa ja Vantaalla. Takaamme laadukkaan ja
+            ammattitaitoisen palvelukokemuksen jokaiselle asiakkaallemme.
           </motion.p>
 
           {/* CTA-painikkeet */}

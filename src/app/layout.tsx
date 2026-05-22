@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -40,6 +40,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0b100d",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,7 +58,7 @@ export default function RootLayout({
           <LivingBackdrop />
           <ScrollProgress />
           <Navbar />
-          <main className="relative">{children}</main>
+          <main className="relative pb-24 xl:pb-0">{children}</main>
           <Footer />
           <MobileStickyCTA />
         </SmoothScrollProvider>

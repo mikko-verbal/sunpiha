@@ -19,7 +19,7 @@ export const newsArticles: NewsArticle[] = [
       "Kiinteistöhuollossa asianmukainen jätteiden käsittely ja kierrätys ovat keskeisiä keinoja ympäristökuormituksen vähentämiseksi.",
     date: "15.1.2025",
     image:
-      "https://images.unsplash.com/photo-1532996122724-e3c354a0fb15?w=1200&q=80",
+      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80",
     category: "Ajankohtaista",
     content: [
       "Kiinteistöhuollossa asianmukainen jätteiden käsittely ja kierrätys ovat keskeisiä keinoja ympäristökuormituksen vähentämiseksi ja arvokkaiden luonnonvarojen säästämiseksi.",

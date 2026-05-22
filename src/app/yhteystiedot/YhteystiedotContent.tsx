@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Building2 } from "lucide-react";
 import { serviceCategories } from "@/data/services";
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal, SectionHeading } from "@/components/ui/motion";
@@ -53,6 +53,12 @@ export default function YhteystiedotContent() {
                 title: "Aukiolo",
                 content: "Ma–Pe 7:00–17:00",
                 sub: "Päivystys 24/7",
+              },
+              {
+                icon: Building2,
+                title: "Y-tunnus",
+                content: COMPANY.businessId,
+                sub: "Sun Piha Oy",
               },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 0.08}>

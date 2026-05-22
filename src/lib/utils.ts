@@ -15,7 +15,7 @@ export const COMPANY = {
   address: "Kuminatie 39b",
   postalCode: "01300",
   city: "Vantaa",
-  businessId: "1234567-8",
+  businessId: "3330218-7",
   area: "Helsinki, Espoo & Vantaa",
 } as const;
 

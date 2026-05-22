@@ -14,7 +14,7 @@ export const wastePrices: WastePriceRow[] = [
   { wasteType: "Kevytbetoni", lowCode: "17 01 01", rd: "R12.2", materialCode: "bk", price: "88,80 €", unit: "tonni" },
   { wasteType: "Betoni, erikoiskappaleet", lowCode: "17 01 01", rd: "R12.2", materialCode: "be", price: "68,70 €", unit: "tonni" },
   { wasteType: "Puu (puhdas, pinnoittamaton)", lowCode: "17 02 01", rd: "R12.2", materialCode: "pp", price: "20,00 €", unit: "tonni" },
-  { wasteType: "Purku- ja saneerauspuu", lowCode: "17 02 01", rd: "R12.2", materialCode: "pj", price: "38,50 €", unit: "tonni" },
+  { wasteType: "Purku- ja saneerauspuu (ei kyllästetty puu)", lowCode: "17 02 01", rd: "R12.2", materialCode: "pj", price: "38,50 €", unit: "tonni" },
   { wasteType: "Painekyllästetty puu", lowCode: "17 02 04*", rd: "R12.2", materialCode: "pkp", price: "280,90 €", unit: "tonni" },
   { wasteType: "Risut, luonnonmateriaali", lowCode: "20 02 01", rd: "R12.2", materialCode: "lr", price: "32,20 €", unit: "tonni" },
   { wasteType: "Kannot", lowCode: "20 02 01", rd: "R12.2", materialCode: "lk", price: "39,10 €", unit: "tonni" },

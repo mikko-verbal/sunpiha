@@ -63,6 +63,11 @@ export function Testimonials() {
                 </blockquote>
 
                 <div className="mt-8">
+                  {testimonials[current].project && (
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-sun/80">
+                      {testimonials[current].project}
+                    </p>
+                  )}
                   <p className="font-semibold text-cream">
                     {testimonials[current].author}
                   </p>

@@ -159,7 +159,7 @@ export const serviceDetails: ServiceDetail[] = [
     longDescription:
       "Asfaltin korjaus ja päällystetyöt pihoille, pysäköintialueille ja teille. Korjaamme halkeamat, reiät ja routa- sekä juurivauriot kestävästi.",
     image:
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80",
+      "https://images.unsplash.com/photo-1772852331753-fc11e83a7288?w=1200&q=80",
     icon: "truck",
     items: [
       "Halkeamat",
@@ -184,7 +184,7 @@ export const serviceDetails: ServiceDetail[] = [
     longDescription:
       "Hoidamme puiden, pensaiden ja lehtien käsittelyn ammattitaidolla. Syksyn lehtien puhallus, istutukset, talvisuojaukset ja leikkaukset.",
     image:
-      "https://images.unsplash.com/photo-1466693908841-165274d6c555?w=1200&q=80",
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
     icon: "treePine",
     items: [
       "Lehtien puhallus ja haravointi",

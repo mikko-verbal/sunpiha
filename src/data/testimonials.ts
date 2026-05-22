@@ -3,6 +3,7 @@ export interface Testimonial {
   quote: string;
   author: string;
   location: string;
+  project?: string;
 }
 
 export const testimonials: Testimonial[] = [
@@ -29,17 +30,25 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "rivitalo",
+    project: "Rivitalon piharemontti",
     quote:
-      "Paljon kiitoksia hyvin tehdystä piharemontista! Nyt pihalla on mukava viettää aikaa, kun remontin lopputulos on erittäin siisti.",
+      "Paljon kiitoksia hyvin tehdystä piharemontista! Nyt pihalla on mukava viettää aikaa, kun remontin lopputulos on erittäin siisti:)",
     author: "Urakkamaailma.fi",
     location: "Espoo",
   },
   {
     id: "takapiha",
     quote:
-      "Sun Piha teki meille takapihan (maantäyttö, mullan levitys, kivetysalueen). Olemme erittäin tyytyväisiä työn toteutukseen ja palveluun. Hommat sujuivat nopeasti ja sovitussa ajassa.",
+      "Sun Piha teki meille takapihan (maantäyttö, mullan levitys, kivetysalueen). Olemme erittäin tyytyväisiä työn toteutukseen ja palveluun. Hommat sujuivat nopeasti ja sovitussa ajassa. Suunnitelmamme muuttui useampaan kertaan, mutta tähän suhtauduttiin positiivisesti ja joustavasti.",
     author: "Urakkamaailma.fi",
     location: "Vantaa",
+  },
+  {
+    id: "kirkkonummi",
+    project: "OK Päätykolmion maalaustyö 15 m²",
+    quote: "Hyvin tehty työ.",
+    author: "Urakkamaailma.fi",
+    location: "Kirkkonummi",
   },
 ];
 

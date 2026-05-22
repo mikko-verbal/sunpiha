@@ -182,8 +182,13 @@ export function EmergencyBanner() {
               <li>· Liukkaudentorjunta</li>
               <li>· Lumenpudotukset</li>
               <li>· Myrskyraivaus</li>
-              <li>· Kiinteistöä vaarantavat tilanteet</li>
+              <li>· Varoitusmerkinnät katolta putoavaa lumivaaraa varten</li>
+              <li>· Muut kiinteistöä vaarantavat tekijät</li>
             </ul>
+            <p className="mt-4 text-xs text-cream/50">
+              Paikallisena huoltoyhtiönä pystymme reagoimaan nopeasti – apu on
+              aina lähellä!
+            </p>
           </motion.div>
         </div>
       </div>
